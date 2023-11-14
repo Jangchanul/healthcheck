@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>헬스체크</title>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    </head>
+    <body>
+        <section class="login">
+            <div class="login_h">
+                <div>
+                    <figure><img src="./image/mask.png" alt=""></figure>
+                    <figcaption>헬스체크</figcaption>
+                </div>
+                <button type="button">Skip</button>
+            </div>
+            <form action="scan.html">
+                <div class="box">
+                    <h5>이름</h5>
+                    <input type="text" required>
+                    <h5>연락처</h5>
+                    <input type="number" required>
+                    <label for="lg_ck">
+                        <input type="checkbox" id="lg_ck">
+                        자동로그인
+                    </label>
+                </div>
+                <button class="btn">다음으로</button>
+                <p>우리는 민감한 개인 생체정보를 수집하지 않습니다</p>
+            </form>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>헬스체크</title>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/highcharts-more.js"></script>
+        <link rel="stylesheet" href="./css/style.css">
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    </head>
+    <body class="bg">
+        <section class="result">
+            <div class="header">
+                <button type="button" class="back" onclick="javascript:history.back();"><img src="./image/back.png" alt=""></button>
+                <button type="button" class="menu" onclick="location.href='menu.html'">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="box">
+                <h3>측정 정의</h3>
+                <ul>
+                    <li>
+                        <strong>심박수</strong>
+                        - 1분 단위의 심장 박동수로 광혈류학적 신호를 필터링하여 분석하여 심장 박동의 시작/종료 시간을 측정하여 1분간 심장 박동수를 추정한다.
+                    </li>
+                    <li>
+                        <strong>심박변이도</strong>
+                        - 심장 박동간의 변동으로 광혈류학적 데이터를 기반으로 SDDN과 같은 심장 박동 주기의 통계적 측정을 통해 계산된다.
+                    </li>
+                    <li>
+                        <strong>호흡수</strong>
+                        - 1분 단위의 호흡 수로 광혈류학적으로 측정된 심박수를 기반으로 분석 알고리즘을 통해 계산된다.
+                    </li>
+                    <li>
+                        <strong>스트레스</strong>
+                        - 자율신경계 정보를 토대로 분석하는 스트레스의 정도를 나타내며 측정한 심박변이도를 기반으로 1분간 전체 심박변이도의 시간 간격 정보를 통계적
+                        분포를 통해 계산된다.
+                    </li>
+                    <li>
+                        <strong>정상혈압과 고혈압의 기준</strong>
+                        -
+                        <figure><img src="./image/explan.png" alt=""></figure>
+                    </li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>호흡수</h3>
+                <div class="highchart">
+                    <div id="breath"></div>
+                </div>
+                <p>호흡수 정상 범위는 12~25회 입니다.</p>
+            </div>
+            <div class="box">
+                <h3>심박변이</h3>
+                <div class="highchart">
+                    <div id="hrv"></div>
+                </div>
+                <p>심박변이 정상 범위는 30~40회 입니다.</p>
+            </div>
+            <div class="box">
+                <h3>심박수</h3>
+                <div class="highchart">
+                    <div id="hr"></div>
+                </div>
+                <p>심박수 정상 범위는 60~100회 입니다.</p>
+            </div>
+            <div class="box">
+                <h3>혈압</h3>
+                <div class="highchart">
+                    <div id="bp"></div>
+                </div>
+                <p>혈압 정상 범위는 120~129회 입니다.</p>
+            </div>
+            <div class="banner">
+                <img src="./image/banner.png" alt="">
+            </div>
+        </section>
+    </body>
+    <script>
+        Highcharts.chart('breath', {
+
+            chart: {
+                type: 'gauge',
+                plotBackgroundColor: null,
+                plotBackgroundImage: null,
+                plotBorderWidth: 0,
+                plotShadow: false,
+                height: '80%'
+            },
+            pane: {
+                startAngle: -90,
+                endAngle: 89.9,
+                background: null,
+                center: [
+                    '50%', '75%'
+                ],
+                size: '90%'
+            },
+
+            // the value axis
+            yAxis: {
+                min: 0,
+                max: 36,
+                tickPixelInterval: 50,
+                tickPosition: 'inside',
+                tickColor: Highcharts.defaultOptions.chart.backgroundColor || '#FFFFFF',
+                tickLength: 0,
+                tickWidth: 0,
+                minorTickInterval: null,
+                labels: {
+                    distance: 20,
+                    style: {
+                        fontSize: '14px'
+                    }
+                },
+                lineWidth: 1,
+                plotBands: [
+                    {
+                        from: 12,
+                        to: 25,
+                        color: '#55BF3B', // green
+                        thickness: 30
+                    }, {
+                        from: 0,
+                        to: 12,
+                        color: '#F0EC68', // yellow
+                        thickness: 30
+                    }, {
+                        from: 25,
+                        to: 36,
+                        color: '#F0EC68', // yellow
+                        thickness: 30
+                    }
+                ]
+            },
+
+            series: [
+                {
+                    name: '호흡수',
+                    data: [15],
+                    dataLabels: {
+                        format: '{y}',
+                        borderWidth: 0,
+                        color: (
+                            Highcharts.defaultOptions.title && Highcharts.defaultOptions.title.style && Highcharts.defaultOptions.title.style.color
+                        ) || '#000',
+                        style: {
+                            fontSize: '30px'
+                        }
+                    },
+                    dial: {
+                        radius: '40%',
+                        backgroundColor: 'gray',
+                        baseWidth: 6,
+                        baseLength: '0%',
+                        rearLength: '0%'
+                    },
+                    pivot: {
+                        backgroundColor: 'gray',
+                        radius: 3
+                    }
+
+                }
+            ]
+
+        });
+        Highcharts.chart('hrv', {
+
+            chart: {
+                type: 'gauge',
+                plotBackgroundColor: null,
+                plotBackgroundImage: null,
+                plotBorderWidth: 0,
+                plotShadow: false,
+                height: '80%'
+            },
+            pane: {
+                startAngle: -90,
+                endAngle: 89.9,
+                background: null,
+                center: [
+                    '50%', '75%'
+                ],
+                size: '90%'
+            },
+
+            // the value axis
+            yAxis: {
+                min: 0,
+                max: 75,
+                tickPixelInterval: 50,
+                tickPosition: 'inside',
+                tickColor: Highcharts.defaultOptions.chart.backgroundColor || '#FFFFFF',
+                tickLength: 0,
+                tickWidth: 0,
+                minorTickInterval: null,
+                labels: {
+                    distance: 20,
+                    style: {
+                        fontSize: '14px'
+                    }
+                },
+                lineWidth: 1,
+                plotBands: [
+                    {
+                        from: 0,
+                        to: 15,
+                        color: '#CE0E2D',
+                        thickness: 30
+                    }, {
+                        from: 15,
+                        to: 30,
+                        color: '#FF4D00',
+                        thickness: 30
+                    }, {
+                        from: 30,
+                        to: 45,
+                        color: '#FFEB2B',
+                        thickness: 30
+                    }, {
+                        from: 45,
+                        to: 60,
+                        color: '#90D5AC',
+                        thickness: 30
+                    }, {
+                        from: 60,
+                        to: 75,
+                        color: '#66C9BA',
+                        thickness: 30
+                    }
+                ]
+            },
+
+            series: [
+                {
+                    name: '심박변이',
+                    data: [38],
+                    dataLabels: {
+                        format: '{y}',
+                        borderWidth: 0,
+                        color: (
+                            Highcharts.defaultOptions.title && Highcharts.defaultOptions.title.style && Highcharts.defaultOptions.title.style.color
+                        ) || '#000',
+                        style: {
+                            fontSize: '30px'
+                        }
+                    },
+                    dial: {
+                        radius: '40%',
+                        backgroundColor: 'gray',
+                        baseWidth: 6,
+                        baseLength: '0%',
+                        rearLength: '0%'
+                    },
+                    pivot: {
+                        backgroundColor: 'gray',
+                        radius: 3
+                    }
+
+                }
+            ]
+
+        });
+        Highcharts.chart('hr', {
+
+            chart: {
+                type: 'gauge',
+                plotBackgroundColor: null,
+                plotBackgroundImage: null,
+                plotBorderWidth: 0,
+                plotShadow: false,
+                height: '80%'
+            },
+            pane: {
+                startAngle: -90,
+                endAngle: 89.9,
+                background: null,
+                center: [
+                    '50%', '75%'
+                ],
+                size: '90%'
+            },
+
+            // the value axis
+            yAxis: {
+                min: 20,
+                max: 140,
+                tickPixelInterval: 50,
+                tickPosition: 'inside',
+                tickColor: Highcharts.defaultOptions.chart.backgroundColor || '#FFFFFF',
+                tickLength: 0,
+                tickWidth: 0,
+                minorTickInterval: null,
+                labels: {
+                    distance: 20,
+                    style: {
+                        fontSize: '14px'
+                    }
+                },
+                lineWidth: 1,
+                plotBands: [
+                    {
+                        from: 0,
+                        to: 60,
+                        color: '#F0EC68',
+                        thickness: 30
+                    }, {
+                        from: 60,
+                        to: 100,
+                        color: '#6EBCA2',
+                        thickness: 30
+                    }, {
+                        from: 100,
+                        to: 140,
+                        color: '#F0EC68',
+                        thickness: 30
+                    }
+                ]
+            },
+
+            series: [
+                {
+                    name: '심박수',
+                    data: [92],
+                    dataLabels: {
+                        format: '{y}',
+                        borderWidth: 0,
+                        color: (
+                            Highcharts.defaultOptions.title && Highcharts.defaultOptions.title.style && Highcharts.defaultOptions.title.style.color
+                        ) || '#000',
+                        style: {
+                            fontSize: '30px'
+                        }
+                    },
+                    dial: {
+                        radius: '40%',
+                        backgroundColor: 'gray',
+                        baseWidth: 6,
+                        baseLength: '0%',
+                        rearLength: '0%'
+                    },
+                    pivot: {
+                        backgroundColor: 'gray',
+                        radius: 3
+                    }
+
+                }
+            ]
+
+        });
+        Highcharts.chart('bp', {
+
+            chart: {
+                type: 'gauge',
+                plotBackgroundColor: null,
+                plotBackgroundImage: null,
+                plotBorderWidth: 0,
+                plotShadow: false,
+                height: '80%'
+            },
+            pane: {
+                startAngle: -90,
+                endAngle: 89.9,
+                background: null,
+                center: [
+                    '50%', '75%'
+                ],
+                size: '90%'
+            },
+
+            // the value axis
+            yAxis: {
+                min: 0,
+                max: 150,
+                tickPixelInterval: 50,
+                tickPosition: 'inside',
+                tickColor: Highcharts.defaultOptions.chart.backgroundColor || '#FFFFFF',
+                tickLength: 0,
+                tickWidth: 0,
+                minorTickInterval: null,
+                labels: {
+                    distance: 20,
+                    style: {
+                        fontSize: '14px'
+                    }
+                },
+                lineWidth: 1,
+                plotBands: [
+                    {
+                        from: 0,
+                        to: 30,
+                        color: '#66C9BA',
+                        thickness: 30
+                    }, {
+                        from: 30,
+                        to: 60,
+                        color: '#90D5AC',
+                        thickness: 30
+                    }, {
+                        from: 60,
+                        to: 90,
+                        color: '#FFEB2B',
+                        thickness: 30
+                    }, {
+                        from: 90,
+                        to: 120,
+                        color: '#FF4D00',
+                        thickness: 30
+                    }, {
+                        from: 120,
+                        to: 150,
+                        color: '#CE0E2D',
+                        thickness: 30
+                    }
+                ]
+            },
+
+            series: [
+                {
+                    name: '혈압',
+                    data: [127],
+                    dataLabels: {
+                        format: '{y}',
+                        borderWidth: 0,
+                        color: (
+                            Highcharts.defaultOptions.title && Highcharts.defaultOptions.title.style && Highcharts.defaultOptions.title.style.color
+                        ) || '#000',
+                        style: {
+                            fontSize: '30px'
+                        }
+                    },
+                    dial: {
+                        radius: '40%',
+                        backgroundColor: 'gray',
+                        baseWidth: 6,
+                        baseLength: '0%',
+                        rearLength: '0%'
+                    },
+                    pivot: {
+                        backgroundColor: 'gray',
+                        radius: 3
+                    }
+
+                }
+            ]
+
+        });
+    </script>
+</html>
