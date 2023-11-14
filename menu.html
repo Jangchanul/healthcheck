@@ -10,17 +10,31 @@
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
-        <header class="head">
-            <button type="button" class="back" onclick="javascript:history.back();"><img src="./image/back_w.png" alt=""></button>
-            <h2>프로필</h2>
-            <button type="button" class="menu" onclick="location.href='result.html'">
-                <img src="./image/menu_w.png" alt="">
-            </button>
+        <header>
+            <div class="head">
+                <button type="button" class="back" onclick="javascript:history.back();"><img src="./image/back_w.png" alt=""></button>
+                <h2>프로필</h2>
+                <button type="button" class="btn_m" onclick="location.href='result.html'">
+                    <img src="./image/menu_w.png" alt="">
+                </button>
+            </div>
         </header>
         <section class="menu">
-            
+            <ul>
+                <li onclick="location.href='calendar.html'">
+                    <figure><img src="./image/calendar.png" alt=""></figure>
+                    <figcaption>다이어리</figcaption>
+                    <span class="arrow"><img src="./image/arrow.png" alt=""></span>
+                </li>
+                <li onclick="location.href='user_data.html'">
+                    <figure><img src="./image/user.png" alt=""></figure>
+                    <figcaption>사용자 데이터</figcaption>
+                    <span class="arrow"><img src="./image/arrow.png" alt=""></span>
+                </li>
+            </ul>
         </section>
     </body>
 </html>

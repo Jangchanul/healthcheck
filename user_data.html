@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>헬스체크</title>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <link rel="stylesheet" href="./css/style.css">
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <header>
+            <div class="head">
+                <button type="button" class="back" onclick="javascript:history.back();"><img src="./image/back_w.png" alt=""></button>
+                <h2>사용자 데이터</h2>
+                <div class="empty"></div>
+            </div>
+        </header>
+        <section class="user_data">
+            <p class="ex">귀하의 데이터는 완벽하게 안전하게 익명으로 처리됩니다.
+            별포는 필수 입력 사항입니다.</p>
+            <table>
+                <tr>
+                    <th>사용자 이름 *</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>성별 *</th>
+                    <td>
+                        <div class="ra">
+                            <input type="radio" id="female" name="gender" checked>
+                            <label for="female">여자</label>
+                            <input type="radio" id="male" name="gender">
+                            <label for="male">남자</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>나이 *</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>키(cm)*</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>몸무게(kg)*</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>건강위험 요인</th>
+                    <td>
+                        <div class="ck">
+                            <input type="checkbox" name="health" id="c1">
+                            <label for="c1">
+                                <div></div>
+                                <p>현재 흡연중</p>
+                            </label>
+                            <input type="checkbox" name="health" id="c2">
+                            <label for="c2">
+                                <div></div>
+                                <p>당뇨병</p>
+                            </label>
+                            <input type="checkbox" name="health" id="c3">
+                            <label for="c3">
+                                <div></div>
+                                <p>고혈압</p>
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>총 콜레스테롤 수치</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>HDL수치</th>
+                    <td><input type="text"></td>
+                </tr>
+            </table>
+            <button class="btn_save" type="button">저장</button>
+        </section>
+    </body>
+</html>

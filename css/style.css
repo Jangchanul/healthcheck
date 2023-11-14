@@ -16,6 +16,36 @@ body {
 .intro {
   width: 100%;
   height: 100%;
+  background: radial-gradient(#06E9EE, #00BDD6);
+  position: relative;
+}
+.intro .bg_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.intro .center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  color: #FFF;
+  text-align: center;
+}
+.intro .center figure {
+  margin-bottom: 3.333vw;
+}
+.intro .center span {
+  display: block;
+  font-weight: 300;
+  margin-bottom: 3.333vw;
+}
+.intro .center p {
+  font-size: 8.333vw;
+  font-weight: 400;
 }
 
 .login {
@@ -84,11 +114,28 @@ body {
   padding: 1.111vw 3.333vw;
   margin-bottom: 6.667vw;
 }
-.login > form > .box label {
+.login > form > .box .ck_box input {
+  display: none;
+}
+.login > form > .box .ck_box input + label {
   display: flex;
+  align-items: center;
   justify-content: flex-end;
 }
-.login > form > .box label input {
+.login > form > .box .ck_box input + label div {
+  width: 4.444vw;
+  height: 4.444vw;
+  background: url(/image/ck_off.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-right: 2.222vw;
+}
+.login > form > .box .ck_box input:checked + label div {
+  width: 4.444vw;
+  height: 4.444vw;
+  background: url(/image/ck_on.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
   margin-right: 2.222vw;
 }
 .login > form .btn {
@@ -196,4 +243,205 @@ body {
 
 .bg {
   background: #EBF1F5;
+}
+
+header {
+  background-color: #00BCD4;
+  padding: 8.333vw 0;
+  border-radius: 0 0 30px 30px;
+  margin-bottom: 8.333vw;
+}
+
+.head {
+  width: 92%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.head h2 {
+  font-size: 4.444vw;
+  font-weight: bold;
+  color: #FFF;
+}
+.head .back {
+  width: 6.667vw;
+  height: 4.444vw;
+}
+.head .btn_m {
+  width: 3.889vw;
+  height: 3.889vw;
+}
+.head .empty {
+  width: 4.444vw;
+  height: 4.444vw;
+}
+
+.menu ul {
+  width: 92%;
+  margin: 0 auto;
+}
+.menu ul li {
+  display: flex;
+  align-items: center;
+  border: 1px solid #00BCD4;
+  border-radius: 30px;
+  padding: 1.111vw;
+  box-sizing: border-box;
+  margin-bottom: 3.333vw;
+  position: relative;
+}
+.menu ul li figure {
+  background-color: #00BCD4;
+  border-radius: 100%;
+  overflow: hidden;
+  width: 11.889vw;
+  height: 11.889vw;
+  padding: 2.222vw;
+  box-sizing: border-box;
+}
+.menu ul li figcaption {
+  margin-left: 5.556vw;
+  font-size: 4.444vw;
+}
+.menu ul li .arrow {
+  position: absolute;
+  right: 5%;
+  width: 2.222vw;
+}
+
+.user_data {
+  padding-bottom: 8.333vw;
+}
+.user_data .ex {
+  width: 92%;
+  margin: 0 auto 6.667vw;
+}
+.user_data table {
+  width: 92%;
+  margin: 0 auto 6.667vw;
+}
+.user_data table tr {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4.444vw;
+}
+.user_data table tr th {
+  text-align: start;
+  margin-bottom: 3.333vw;
+}
+.user_data table tr td input {
+  border: 1px solid #00BCD4;
+  border-radius: 30px;
+  background: #F5F8FA;
+  padding: 0 3.333vw;
+  box-sizing: border-box;
+  width: 100%;
+  height: 11.111vw;
+  text-align: center;
+}
+.user_data table tr td .ra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user_data table tr td .ra input {
+  display: none;
+}
+.user_data table tr td .ra input + label {
+  border: 1px solid #00BCD4;
+  border-radius: 30px;
+  background: #F5F8FA;
+  width: 45%;
+  height: 11.111vw;
+  line-height: 11.111vw;
+  padding: 0 3.333vw;
+  box-sizing: border-box;
+  text-align: center;
+}
+.user_data table tr td .ra input:checked + label {
+  background-color: #00BCD4;
+  color: #FFF;
+}
+.user_data table tr td .ck {
+  display: flex;
+  justify-content: space-between;
+}
+.user_data table tr td .ck input {
+  display: none;
+}
+.user_data table tr td .ck input + label {
+  display: flex;
+  align-items: center;
+}
+.user_data table tr td .ck input + label div {
+  width: 6.667vw;
+  height: 6.667vw;
+  background: url(/image/ck_off.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.user_data table tr td .ck input + label p {
+  margin-left: 3.333vw;
+}
+.user_data table tr td .ck input:checked + label div {
+  width: 6.667vw;
+  height: 6.667vw;
+  background: url(/image/ck_on.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.user_data .btn_save {
+  display: block;
+  width: 92%;
+  margin: 0 auto;
+  background-color: #00BCD4;
+  color: #FFF;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 3.333vw 0;
+}
+
+.calendar {
+  width: 92%;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 2px 6px 2px rgba(169, 169, 169, 0.3);
+  border-radius: 8px;
+}
+.calendar td {
+  width: 13.889vw;
+  height: 13.889vw;
+  line-height: 2;
+  cursor: pointer;
+}
+.calendar .cym {
+  font-size: 4.444vw;
+  font-weight: bold;
+  border-bottom: 1px solid #969696;
+}
+.calendar .cym td {
+  height: 16.667vw;
+  line-height: 16.667vw;
+}
+.calendar .dd td {
+  background-color: #00BCD4;
+  color: #FFF;
+  line-height: 13.889vw;
+}
+.calendar .today {
+  background-color: rgba(128, 128, 128, 0.3);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.calendar .choiceDay {
+  background-color: #00BCD4;
+  color: #FFF;
+}
+.calendar .choiceDay .green {
+  width: 2.222vw;
+  height: 2.222vw;
+  background-color: rgba(87, 201, 132, 0.5);
+  border-radius: 100%;
 }/*# sourceMappingURL=style.css.map */

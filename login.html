@@ -16,7 +16,7 @@
                     <figure><img src="./image/mask.png" alt=""></figure>
                     <figcaption>헬스체크</figcaption>
                 </div>
-                <button type="button">Skip</button>
+                <button type="button" class="skip">Skip</button>
             </div>
             <form action="scan.html">
                 <div class="box">
@@ -24,10 +24,13 @@
                     <input type="text" required>
                     <h5>연락처</h5>
                     <input type="number" required>
-                    <label for="lg_ck">
+                    <div class="ck_box">
                         <input type="checkbox" id="lg_ck">
-                        자동로그인
-                    </label>
+                        <label for="lg_ck">
+                            <div></div>
+                            자동로그인
+                        </label>
+                    </div>
                 </div>
                 <button class="btn">다음으로</button>
                 <p>우리는 민감한 개인 생체정보를 수집하지 않습니다</p>
