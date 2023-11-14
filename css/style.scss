@@ -29,7 +29,6 @@ body{
         position: absolute;
         top: 0;
         left: 0;
-        z-index: -100;
         >div{
             width: 33.333vw;
             margin: 0 auto;
@@ -50,6 +49,7 @@ body{
             border-radius: 2.222vw;
             padding: 2.222vw 4.444vw;
             color: $main_c;
+            z-index: 10;
         }
     }
     >form{

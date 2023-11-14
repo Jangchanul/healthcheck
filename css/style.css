@@ -31,7 +31,6 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -100;
 }
 .login .login_h > div {
   width: 33.333vw;
@@ -53,6 +52,7 @@ body {
   border-radius: 2.222vw;
   padding: 2.222vw 4.444vw;
   color: #00BCD4;
+  z-index: 10;
 }
 .login > form {
   width: 100%;
