@@ -125,7 +125,7 @@ body {
 .login > form > .box .ck_box input + label div {
   width: 4.444vw;
   height: 4.444vw;
-  background: url(/image/ck_off.png);
+  background: url(../image/ck_off.png);
   background-repeat: no-repeat;
   background-size: 100%;
   margin-right: 2.222vw;
@@ -133,7 +133,7 @@ body {
 .login > form > .box .ck_box input:checked + label div {
   width: 4.444vw;
   height: 4.444vw;
-  background: url(/image/ck_on.png);
+  background: url(../image/ck_on.png);
   background-repeat: no-repeat;
   background-size: 100%;
   margin-right: 2.222vw;
@@ -174,31 +174,120 @@ body {
   justify-content: space-between;
 }
 
-.result {
-  width: 100%;
-  height: 100%;
-  padding-top: 8.333vw;
-  box-sizing: border-box;
-}
-.result .header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 92%;
   margin: 0 auto 5.556vw;
 }
-.result .header .back {
+.header h2 {
+  color: #FFF;
+  font-size: 4.444vw;
+}
+.header .empty {
   width: 5.556vw;
 }
-.result .header .menu {
+.header .back {
   width: 5.556vw;
 }
-.result .header .menu span {
+.header .menu_o {
+  width: 5.556vw;
+  height: 5.556vw;
+}
+.header .menu_o span {
   display: block;
   height: 2px;
   background-color: #000;
   margin-bottom: 4px;
   border-radius: 8px;
+}
+.header .menu_container {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.header .menu_container .menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #FFF;
+  width: 80%;
+  height: 100%;
+  padding: 8.333vw 0;
+  box-sizing: border-box;
+}
+.header .menu_container .menu ul {
+  width: 92%;
+  height: 80%;
+  margin: 0 auto;
+  border: 1px solid #00BCD4;
+  border-radius: 12px;
+  padding: 6.667vw 0;
+}
+.header .menu_container .menu ul li:first-child {
+  border-top: 1px solid #00BCD4;
+}
+.header .menu_container .menu ul li {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #00BDD6;
+  padding: 2.222vw;
+  box-sizing: border-box;
+  position: relative;
+}
+.header .menu_container .menu ul li figure {
+  background-color: #00BCD4;
+  border-radius: 100%;
+  overflow: hidden;
+  width: 10.889vw;
+  height: 10.889vw;
+  padding: 2.222vw;
+  box-sizing: border-box;
+}
+.header .menu_container .menu ul li figcaption {
+  margin-left: 5.556vw;
+  font-size: 4.444vw;
+}
+.header .menu_container .menu ul li .arrow {
+  position: absolute;
+  right: 5%;
+  width: 2.222vw;
+}
+.header .menu_container .menu_c {
+  width: 5.556vw;
+  height: 5.556vw;
+  margin-left: 4%;
+  margin-bottom: 8.333vw;
+}
+.header .menu_container .menu_c span {
+  display: block;
+  height: 2px;
+  background-color: #000;
+  margin-bottom: 4px;
+  border-radius: 8px;
+}
+.header .menu_container .menu_c span:nth-child(1) {
+  width: 50%;
+}
+.header .menu_container .menu_c span:nth-child(3) {
+  width: 50%;
+  margin-left: auto;
+}
+
+.cal_h .menu_o span {
+  background-color: #FFF;
+}
+
+.result {
+  width: 100%;
+  height: 100%;
+  padding-top: 8.333vw;
+  box-sizing: border-box;
 }
 .result .box {
   border-radius: 15px;
@@ -250,64 +339,6 @@ header {
   padding: 8.333vw 0;
   border-radius: 0 0 30px 30px;
   margin-bottom: 8.333vw;
-}
-
-.head {
-  width: 92%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.head h2 {
-  font-size: 4.444vw;
-  font-weight: bold;
-  color: #FFF;
-}
-.head .back {
-  width: 6.667vw;
-  height: 4.444vw;
-}
-.head .btn_m {
-  width: 3.889vw;
-  height: 3.889vw;
-}
-.head .empty {
-  width: 4.444vw;
-  height: 4.444vw;
-}
-
-.menu ul {
-  width: 92%;
-  margin: 0 auto;
-}
-.menu ul li {
-  display: flex;
-  align-items: center;
-  border: 1px solid #00BCD4;
-  border-radius: 30px;
-  padding: 1.111vw;
-  box-sizing: border-box;
-  margin-bottom: 3.333vw;
-  position: relative;
-}
-.menu ul li figure {
-  background-color: #00BCD4;
-  border-radius: 100%;
-  overflow: hidden;
-  width: 11.889vw;
-  height: 11.889vw;
-  padding: 2.222vw;
-  box-sizing: border-box;
-}
-.menu ul li figcaption {
-  margin-left: 5.556vw;
-  font-size: 4.444vw;
-}
-.menu ul li .arrow {
-  position: absolute;
-  right: 5%;
-  width: 2.222vw;
 }
 
 .user_data {
@@ -377,7 +408,7 @@ header {
 .user_data table tr td .ck input + label div {
   width: 6.667vw;
   height: 6.667vw;
-  background: url(/image/ck_off.png);
+  background: url(../image/ck_off.png);
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -387,7 +418,7 @@ header {
 .user_data table tr td .ck input:checked + label div {
   width: 6.667vw;
   height: 6.667vw;
-  background: url(/image/ck_on.png);
+  background: url(../image/ck_on.png);
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -402,46 +433,27 @@ header {
   padding: 3.333vw 0;
 }
 
-.calendar {
-  width: 92%;
+.datepicker {
+  width: 80%;
   margin: 0 auto;
-  text-align: center;
-  box-shadow: 0 2px 6px 2px rgba(169, 169, 169, 0.3);
-  border-radius: 8px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px 2px rgba(51, 51, 51, 0.15) !important;
 }
-.calendar td {
-  width: 13.889vw;
-  height: 13.889vw;
-  line-height: 2;
-  cursor: pointer;
-}
-.calendar .cym {
-  font-size: 4.444vw;
-  font-weight: bold;
-  border-bottom: 1px solid #969696;
-}
-.calendar .cym td {
-  height: 16.667vw;
-  line-height: 16.667vw;
-}
-.calendar .dd td {
-  background-color: #00BCD4;
-  color: #FFF;
-  line-height: 13.889vw;
-}
-.calendar .today {
-  background-color: rgba(128, 128, 128, 0.3);
-  color: #fff;
+.datepicker .datepicker--nav-title {
   font-weight: 600;
-  cursor: pointer;
 }
-.calendar .choiceDay {
+.datepicker .datepicker--nav-title i {
+  color: #333;
+}
+.datepicker .datepicker--days-names {
   background-color: #00BCD4;
+  padding: 8px;
+}
+.datepicker .datepicker--day-name {
   color: #FFF;
 }
-.calendar .choiceDay .green {
-  width: 2.222vw;
-  height: 2.222vw;
-  background-color: rgba(87, 201, 132, 0.5);
-  border-radius: 100%;
+.datepicker .datepicker--cell {
+  font-weight: 600;
+  height: 50px;
+  vertical-align: top;
 }/*# sourceMappingURL=style.css.map */

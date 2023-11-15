@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>헬스체크</title>
         <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
         <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
         <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -18,11 +19,32 @@
         <section class="result">
             <div class="header">
                 <button type="button" class="back" onclick="location.href='scan.html'"><img src="./image/back.png" alt=""></button>
-                <button type="button" class="menu" onclick="location.href='menu.html'">
+                <button type="button" class="menu_o">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
+                <div class="menu_container">
+                    <div class="menu">
+                        <button type="button" class="menu_c">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <ul>
+                            <li onclick="location.href='calendar.html'">
+                                <figure><img src="./image/calendar.png" alt=""></figure>
+                                <figcaption>다이어리</figcaption>
+                                <span class="arrow"><img src="./image/arrow.png" alt=""></span>
+                            </li>
+                            <li onclick="location.href='user_data.html'">
+                                <figure><img src="./image/user.png" alt=""></figure>
+                                <figcaption>사용자 데이터</figcaption>
+                                <span class="arrow"><img src="./image/arrow.png" alt=""></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div class="box">
                 <h3>측정 정의</h3>
@@ -85,6 +107,14 @@
         </section>
     </body>
     <script>
+        $(function(){
+            $(".menu_o").on("click",function(){
+                $(".menu_container").toggle("slide",{direction:'right'}, 500);
+            });
+            $(".menu_c").on("click",function(){
+                $(".menu_container").toggle("slide",{direction:'right'}, 500);
+            });
+        });
         Highcharts.chart('breath', {
 
             chart: {
