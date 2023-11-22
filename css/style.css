@@ -244,9 +244,28 @@ body {
 .header .menu_container .menu .top figcaption .empty {
   width: 5.556vw;
 }
+.header .menu_container .menu .logout {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #00BCD4;
+  padding: 5.556vw 3.889vw 3.889vw 3.889vw;
+  border-radius: 30px 0 0 0;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.header .menu_container .menu .logout p {
+  background: url(../image/logout.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  text-align: center;
+  color: #FFF;
+  font-size: 5vw;
+  padding: 4vw 0;
+}
 .header .menu_container .menu .dep1 {
   width: 92%;
-  height: 80%;
   margin: 0 auto;
   padding: 13.889vw 0;
   box-sizing: border-box;
