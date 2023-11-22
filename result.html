@@ -25,54 +25,92 @@
                     <span></span>
                 </button>
                 <div class="menu_container">
+                    <div class="m_bg"></div>
                     <div class="menu">
-                        <button type="button" class="menu_c">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                        <ul>
-                            <li onclick="location.href='calendar.html'">
-                                <figure><img src="./image/calendar.png" alt=""></figure>
-                                <figcaption>다이어리</figcaption>
-                                <span class="arrow"><img src="./image/arrow.png" alt=""></span>
+                        <div class="top">
+                            <figure><img src="./image/intro_mask.png" alt=""></figure>
+                            <figcaption>
+                                <button type="button" class="menu_c">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                                <p>헬스체크</p>
+                                <div class="empty"></div>
+                            </figcaption>
+                        </div>
+                        
+                        <ul class="dep1">
+                            <li onclick="location.href='scan.html'">
+                                <div class="list">
+                                    <figure><img src="./image/arrow_d.png" alt=""></figure>
+                                    <figcaption>HOME</figcaption>
+                                </div>
                             </li>
-                            <li onclick="location.href='user_data.html'">
-                                <figure><img src="./image/user.png" alt=""></figure>
-                                <figcaption>사용자 데이터</figcaption>
-                                <span class="arrow"><img src="./image/arrow.png" alt=""></span>
+                            <li>
+                                <div class="list">
+                                    <figure><img src="./image/arrow_d.png" alt=""></figure>
+                                    <figcaption>다이어리</figcaption>
+                                </div>
+                                <ul class="dep2">
+                                    <li onclick="location.href='calendar.html'">
+                                        <div class="list">
+                                            <figure><img src="./image/arrow_l.png" alt=""></figure>
+                                            <figcaption>세부데이터</figcaption>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <div class="list">
+                                    <figure><img src="./image/arrow_d.png" alt=""></figure>
+                                    <figcaption>프로필</figcaption>
+                                </div>
+                                <ul class="dep2">
+                                    <li onclick="location.href='user_data.html'">
+                                        <div class="list">
+                                            <figure><img src="./image/arrow_l.png" alt=""></figure>
+                                            <figcaption>사용자데이터</figcaption>
+                                        </div>
+                                    </li>
+                                    <li onclick="location.href='#'">
+                                        <div class="list">
+                                            <figure><img src="./image/arrow_l.png" alt=""></figure>
+                                            <figcaption>알림</figcaption>
+                                        </div>
+                                    </li>
+                                    <li onclick="location.href='#'">
+                                        <div class="list">
+                                            <figure><img src="./image/arrow_l.png" alt=""></figure>
+                                            <figcaption>설정</figcaption>
+                                        </div>
+                                    </li>
+                                    <li onclick="location.href='#'">
+                                        <div class="list">
+                                            <figure><img src="./image/arrow_l.png" alt=""></figure>
+                                            <figcaption>계정</figcaption>
+                                        </div>
+                                    </li>
+                                    <li onclick="location.href='#'">
+                                        <div class="list">
+                                            <figure><img src="./image/arrow_l.png" alt=""></figure>
+                                            <figcaption>문의하기</figcaption>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li onclick="location.href='replay.html'">
+                                <div class="list">
+                                    <figure><img src="./image/arrow_d.png" alt=""></figure>
+                                    <figcaption>다시보기</figcaption>
+                                </div>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="box">
-                <h3>측정 정의</h3>
-                <ul>
-                    <li>
-                        <strong>심박수</strong>
-                        - 1분 단위의 심장 박동수로 광혈류학적 신호를 필터링하여 분석하여 심장 박동의 시작/종료 시간을 측정하여 1분간 심장 박동수를 추정한다.
-                    </li>
-                    <li>
-                        <strong>심박변이도</strong>
-                        - 심장 박동간의 변동으로 광혈류학적 데이터를 기반으로 SDDN과 같은 심장 박동 주기의 통계적 측정을 통해 계산된다.
-                    </li>
-                    <li>
-                        <strong>호흡수</strong>
-                        - 1분 단위의 호흡 수로 광혈류학적으로 측정된 심박수를 기반으로 분석 알고리즘을 통해 계산된다.
-                    </li>
-                    <li>
-                        <strong>스트레스</strong>
-                        - 자율신경계 정보를 토대로 분석하는 스트레스의 정도를 나타내며 측정한 심박변이도를 기반으로 1분간 전체 심박변이도의 시간 간격 정보를 통계적
-                        분포를 통해 계산된다.
-                    </li>
-                    <li>
-                        <strong>정상혈압과 고혈압의 기준</strong>
-                        -
-                        <figure><img src="./image/explan.png" alt=""></figure>
-                    </li>
-                </ul>
-            </div>
+            
             <div class="box">
                 <h3>호흡수</h3>
                 <div class="highchart">
@@ -101,18 +139,70 @@
                 </div>
                 <p>혈압 정상 범위는 120~129회 입니다.</p>
             </div>
+            <div class="follow">
+                <h3>하루에 두번만 따라해 보세요</h3>
+                <ul>
+                    <li>
+                        <figure><img src="./image/noimg.jpg" alt=""></figure>
+                        <figcaption>림프 순환 얼굴,상체,하체 등등 건강에 좋은</figcaption>
+                    </li>
+                    <li>
+                        <figure><img src="./image/noimg.jpg" alt=""></figure>
+                        <figcaption>림프 순환 얼굴,상체,하체 등등 건강에 좋은</figcaption>
+                    </li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>측정 정의</h3>
+                <ul>
+                    <li>
+                        <strong>심박수</strong>
+                        - 1분 단위의 심장 박동수로 광혈류학적 신호를 필터링하여 분석하여 심장 박동의 시작/종료 시간을 측정하여 1분간 심장 박동수를 추정한다.
+                    </li>
+                    <li>
+                        <strong>심박변이도</strong>
+                        - 심장 박동간의 변동으로 광혈류학적 데이터를 기반으로 SDDN과 같은 심장 박동 주기의 통계적 측정을 통해 계산된다.
+                    </li>
+                    <li>
+                        <strong>호흡수</strong>
+                        - 1분 단위의 호흡 수로 광혈류학적으로 측정된 심박수를 기반으로 분석 알고리즘을 통해 계산된다.
+                    </li>
+                    <li>
+                        <strong>스트레스</strong>
+                        - 자율신경계 정보를 토대로 분석하는 스트레스의 정도를 나타내며 측정한 심박변이도를 기반으로 1분간 전체 심박변이도의 시간 간격 정보를 통계적
+                        분포를 통해 계산된다.
+                    </li>
+                    <li>
+                        <strong>정상혈압과 고혈압의 기준</strong>
+                        -
+                        <figure><img src="./image/explan.png" alt=""></figure>
+                    </li>
+                </ul>
+            </div>
             <div class="banner">
                 <img src="./image/banner.png" alt="">
             </div>
         </section>
     </body>
     <script>
-        $(function(){
-            $(".menu_o").on("click",function(){
-                $(".menu_container").toggle("slide",{direction:'right'}, 500);
+        $(function () {
+            $(".menu_o").on("click", function () {
+                $(".menu_container").toggle("slide", {
+                    direction: 'right'
+                }, 500);
             });
-            $(".menu_c").on("click",function(){
-                $(".menu_container").toggle("slide",{direction:'right'}, 500);
+            $(".menu_c").on("click", function () {
+                $(".menu_container").toggle("slide", {
+                    direction: 'right'
+                }, 500);
+            });
+            $(".dep1 .list").on("click", function () {
+                $(this).siblings(".dep2").slideToggle();
+            });
+            $(".m_bg").on("click", function () {
+                $(".menu_container").toggle("slide", {
+                    direction: 'right'
+                }, 500);
             });
         });
         Highcharts.chart('breath', {

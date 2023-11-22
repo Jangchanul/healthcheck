@@ -19,7 +19,7 @@
         <header>
             <div class="header cal_h">
                 <button type="button" class="back" onclick="javascript:history.back();"><img src="./image/back_w.png" alt=""></button>
-                <h2>다이어리</h2>
+                <h2>다시보기</h2>
                 <button type="button" class="menu_o">
                     <span></span>
                     <span></span>
@@ -111,39 +111,35 @@
                     </div>
                 </div>
             </div>
-
         </header>
-        <section class="diary">
-            <div class="datepicker-here" data-language='ko'></div>
-            <div class="detail">
-                <h3>세부데이터</h3>
-                <ul>
-                    <li onclick="location.href='detail_data.html'">
-                        <figcaption>심박수</figcaption>
-                        <figure><img src="./image/icon1.png" alt=""></figure>
-                    </li>
-                    <li onclick="location.href='detail_data.html'">
-                        <figcaption>심박변이도</figcaption>
-                        <figure><img src="./image/icon1.png" alt=""></figure>
-                    </li>
-                    <li onclick="location.href='detail_data.html'">
-                        <figcaption>호흡수</figcaption>
-                        <figure><img src="./image/icon2.png" alt=""></figure>
-                    </li>
-                    <li onclick="location.href='detail_data.html'">
-                        <figcaption>혈압(이완)</figcaption>
-                        <figure><img src="./image/icon3.png" alt=""></figure>
-                    </li>
-                    <li onclick="location.href='detail_data.html'">
-                        <figcaption>혈압(수축)</figcaption>
-                        <figure><img src="./image/icon3.png" alt=""></figure>
-                    </li>
-                    <li onclick="location.href='detail_data.html'">
-                        <figcaption>스트레스</figcaption>
-                        <figure><img src="./image/icon4.png" alt=""></figure>
-                    </li>
-                </ul>
+        <section class="replay">
+            <div class="top_select">
+                <select name="" id="">
+                    <option value="">제목을 선택 하세요.</option>
+                    <option value="">23년 인천고령 50+ 하반기</option>
+                    <option value="">24년 상반기</option>
+                    <option value="">24년 하반기</option>
+                </select>
+                <button type="button">선택</button>
             </div>
+            <ul>
+                <li>
+                    <figure><img src="./image/noimg.jpg" alt=""></figure>
+                    <figcaption>23년 인천고령 50+ 힐링 요가</figcaption>
+                    <div>
+                        <p>[오전]몸으로 체크인 1.스트레스 체크체크체크체크</p>
+                        <span>23.11.07</span>
+                    </div>
+                </li>
+                <li>
+                    <figure><img src="./image/noimg.jpg" alt=""></figure>
+                    <figcaption>23년 인천고령 50+ 힐링 요가</figcaption>
+                    <div>
+                        <p>[오전]몸으로 체크인 1.스트레스 체크체크체크체크</p>
+                        <span>23.11.07</span>
+                    </div>
+                </li>
+            </ul>
         </section>
     </body>
     <script>

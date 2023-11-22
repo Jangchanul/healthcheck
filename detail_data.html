@@ -6,10 +6,7 @@
         <title>헬스체크</title>
         <script src="https://code.jquery.com/jquery-latest.min.js"></script>
         <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-        <script src="./air-datepicker/dist/js/datepicker.min.js"></script>
-        <script src="./air-datepicker/dist/js/i18n/datepicker.ko.js"></script>
-        <link rel="stylesheet" href="./air-datepicker/dist/css/datepicker.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
         <link rel="stylesheet" href="./css/style.css">
         <link
             rel="stylesheet"
@@ -40,7 +37,7 @@
                                 <div class="empty"></div>
                             </figcaption>
                         </div>
-                        
+
                         <ul class="dep1">
                             <li onclick="location.href='scan.html'">
                                 <div class="list">
@@ -62,7 +59,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            
+
                             <li>
                                 <div class="list">
                                     <figure><img src="./image/arrow_d.png" alt=""></figure>
@@ -113,36 +110,41 @@
             </div>
 
         </header>
-        <section class="diary">
-            <div class="datepicker-here" data-language='ko'></div>
-            <div class="detail">
-                <h3>세부데이터</h3>
-                <ul>
-                    <li onclick="location.href='detail_data.html'">
-                        <figcaption>심박수</figcaption>
-                        <figure><img src="./image/icon1.png" alt=""></figure>
-                    </li>
-                    <li onclick="location.href='detail_data.html'">
-                        <figcaption>심박변이도</figcaption>
-                        <figure><img src="./image/icon1.png" alt=""></figure>
-                    </li>
-                    <li onclick="location.href='detail_data.html'">
-                        <figcaption>호흡수</figcaption>
-                        <figure><img src="./image/icon2.png" alt=""></figure>
-                    </li>
-                    <li onclick="location.href='detail_data.html'">
-                        <figcaption>혈압(이완)</figcaption>
-                        <figure><img src="./image/icon3.png" alt=""></figure>
-                    </li>
-                    <li onclick="location.href='detail_data.html'">
-                        <figcaption>혈압(수축)</figcaption>
-                        <figure><img src="./image/icon3.png" alt=""></figure>
-                    </li>
-                    <li onclick="location.href='detail_data.html'">
-                        <figcaption>스트레스</figcaption>
-                        <figure><img src="./image/icon4.png" alt=""></figure>
-                    </li>
+        <section class="detail_data">
+            <div class="container">
+                <h3>
+                    <span><img src="./image/icon1.png" alt=""></span>
+                    <strong>심박수</strong>
+                    bpm
+                </h3>
+                <ul class="tabs">
+                    <li class="tab-link current" data-tab="tab-1">일</li>
+                    <li class="tab-link" data-tab="tab-2">주</li>
+                    <li class="tab-link" data-tab="tab-3">월</li>
+                    <li class="tab-link" data-tab="tab-4">년</li>
                 </ul>
+
+                <div id="tab-1" class="tab-content current">
+                    <div class="chart_box">
+                        <div id="chart-container"></div>
+                    </div>
+                </div>
+                <div id="tab-2" class="tab-content">
+                    <div class="chart_box">
+                        <div id="chart-container"></div>
+                    </div>
+                </div>
+                <div id="tab-3" class="tab-content">
+                    <div class="chart_box">
+                        <div id="chart-container"></div>
+                    </div>
+                </div>
+                <div id="tab-4" class="tab-content">
+                    <div class="chart_box">
+                        <div id="chart-container"></div>
+                    </div>
+                </div>
+
             </div>
         </section>
     </body>
@@ -159,13 +161,59 @@
                 }, 500);
             });
             $(".dep1 .list").on("click", function () {
-                $(this).siblings(".dep2").slideToggle();
+                $(this)
+                    .siblings(".dep2")
+                    .slideToggle();
             });
             $(".m_bg").on("click", function () {
                 $(".menu_container").toggle("slide", {
                     direction: 'right'
                 }, 500);
             });
+            $('ul.tabs li').click(function () {
+                var tab_id = $(this).attr('data-tab');
+
+                $('ul.tabs li').removeClass('current');
+                $('.tab-content').removeClass('current');
+
+                $(this).addClass('current');
+                $("#" + tab_id).addClass('current');
+            })
         });
+        var dom = document.getElementById('chart-container');
+        var myChart = echarts.init(dom, null, {
+            renderer: 'canvas',
+            useDirtyRect: false
+        });
+        var app = {};
+
+        var option;
+
+        option = {
+            xAxis: {},
+            yAxis: {},
+            series: [
+                {
+                    data: [
+                        [
+                            10, 40
+                        ],
+                        [
+                            50, 100
+                        ],
+                        [
+                            40, 20
+                        ]
+                    ],
+                    type: 'line'
+                }
+            ]
+        };
+
+        if (option && typeof option === 'object') {
+            myChart.setOption(option);
+        }
+
+        window.addEventListener('resize', myChart.resize);
     </script>
 </html>
