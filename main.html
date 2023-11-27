@@ -6,17 +6,20 @@
         <title>헬스체크</title>
         <script src="https://code.jquery.com/jquery-latest.min.js"></script>
         <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="./air-datepicker/dist/js/datepicker.min.js"></script>
+        <script src="./air-datepicker/dist/js/i18n/datepicker.ko.js"></script>
+        <link rel="stylesheet" href="./air-datepicker/dist/css/datepicker.min.css">
         <link rel="stylesheet" href="./css/style.css">
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     </head>
-    <body>
+    <body class="m_body">
         <header>
             <div class="header cal_h">
-                <button type="button" class="back" onclick="javascript:history.back();"><img src="./image/back_w.png" alt=""></button>
-                <h2>다이어리</h2>
+                <div class="empty"></div>
+                <h2>HOME</h2>
                 <button type="button" class="menu_o">
                     <span></span>
                     <span></span>
@@ -37,7 +40,7 @@
                                 <div class="empty"></div>
                             </figcaption>
                         </div>
-
+                        
                         <ul class="dep1">
                             <li onclick="location.href='main.html'">
                                 <div class="list">
@@ -59,7 +62,7 @@
                                     </li>
                                 </ul>
                             </li>
-
+                            
                             <li>
                                 <div class="list">
                                     <figure><img src="./image/arrow_d.png" alt=""></figure>
@@ -111,45 +114,53 @@
                     </div>
                 </div>
             </div>
-
         </header>
-        <section class="detail_data">
-            <div class="container">
-                <h3>
-                    <span><img src="./image/icon1.png" alt=""></span>
-                    <strong>심박수</strong>
-                    bpm
-                </h3>
-                <ul class="tabs">
-                    <li class="tab-link current" data-tab="tab-1">일</li>
-                    <li class="tab-link" data-tab="tab-2">주</li>
-                    <li class="tab-link" data-tab="tab-3">월</li>
-                    <li class="tab-link" data-tab="tab-4">년</li>
+        <section class="main">
+            <div class="mid">
+                <button type="button" class="btn_scan">
+                    <figure><img src="./image/mask2.png" alt=""></figure>
+                    <figcaption>측정시작</figcaption>
+                </button>
+                <ul class="list">
+                    <li onclick="location.href='calendar.html'">
+                        <figure><img src="./image/m1.png" alt=""></figure>
+                        <figcaption>다이어리</figcaption>
+                    </li>
+                    <li onclick="location.href='replay.html'">
+                        <figure><img src="./image/m2.png" alt=""></figure>
+                        <figcaption>수업 다시보기</figcaption>
+                    </li>
+                    <li onclick="location.href='user_data.html'">
+                        <figure><img src="./image/m3.png" alt=""></figure>
+                        <figcaption>정보수정</figcaption>
+                    </li>
                 </ul>
-
-                <div id="tab-1" class="tab-content current">
-                    <div class="chart_box">
-                        <div id="chart-container"></div>
-                    </div>
-                </div>
-                <div id="tab-2" class="tab-content">
-                    <div class="chart_box">
-                        <div id="chart-container"></div>
-                    </div>
-                </div>
-                <div id="tab-3" class="tab-content">
-                    <div class="chart_box">
-                        <div id="chart-container"></div>
-                    </div>
-                </div>
-                <div id="tab-4" class="tab-content">
-                    <div class="chart_box">
-                        <div id="chart-container"></div>
-                    </div>
-                </div>
-
             </div>
         </section>
+        <footer class="tab_bar">
+            <ul>
+                <li onclick="location.href='calendar.html'">
+                    <figure><img src="./image/f1.png" alt=""></figure>
+                    <figcaption>다이어리</figcaption>
+                </li>
+                <li onclick="location.href='result.html'">
+                    <figure><img src="./image/f2.png" alt=""></figure>
+                    <figcaption>측정기록</figcaption>
+                </li>
+                <li onclick="location.href='scan.html'">
+                    <figure><img src="./image/f3.png" alt=""></figure>
+                    <figcaption>측정시작</figcaption>
+                </li>
+                <li onclick="location.href='replay.html'"">
+                    <figure><img src="./image/f4.png" alt=""></figure>
+                    <figcaption>다시보기</figcaption>
+                </li>
+                <li onclick="location.href='user_data.html'"">
+                    <figure><img src="./image/f5.png" alt=""></figure>
+                    <figcaption>프로필</figcaption>
+                </li>
+            </ul>
+        </footer>
     </body>
     <script>
         $(function () {
@@ -164,59 +175,13 @@
                 }, 500);
             });
             $(".dep1 .list").on("click", function () {
-                $(this)
-                    .siblings(".dep2")
-                    .slideToggle();
+                $(this).siblings(".dep2").slideToggle();
             });
             $(".m_bg").on("click", function () {
                 $(".menu_container").toggle("slide", {
                     direction: 'right'
                 }, 500);
             });
-            $('ul.tabs li').click(function () {
-                var tab_id = $(this).attr('data-tab');
-
-                $('ul.tabs li').removeClass('current');
-                $('.tab-content').removeClass('current');
-
-                $(this).addClass('current');
-                $("#" + tab_id).addClass('current');
-            })
         });
-        var dom = document.getElementById('chart-container');
-        var myChart = echarts.init(dom, null, {
-            renderer: 'canvas',
-            useDirtyRect: false
-        });
-        var app = {};
-
-        var option;
-
-        option = {
-            xAxis: {},
-            yAxis: {},
-            series: [
-                {
-                    data: [
-                        [
-                            10, 40
-                        ],
-                        [
-                            50, 100
-                        ],
-                        [
-                            40, 20
-                        ]
-                    ],
-                    type: 'line'
-                }
-            ]
-        };
-
-        if (option && typeof option === 'object') {
-            myChart.setOption(option);
-        }
-
-        window.addEventListener('resize', myChart.resize);
     </script>
 </html>

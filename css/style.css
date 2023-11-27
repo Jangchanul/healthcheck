@@ -692,4 +692,75 @@ header {
 }
 .detail_data .container div.tab-content.current {
   display: block;
+}
+
+.m_body {
+  background-color: #EBF1F5;
+}
+.m_body .main {
+  width: 100%;
+  padding-bottom: 24vw;
+  box-sizing: border-box;
+}
+.m_body .main .mid .btn_scan {
+  display: block;
+  width: 58.4vw;
+  background-color: #00BCD4;
+  border-radius: 100%;
+  overflow: hidden;
+  padding: 13.889vw 13.889vw 0 13.889vw;
+  box-sizing: border-box;
+  margin: 0 auto 11.111vw;
+}
+.m_body .main .mid .btn_scan figure {
+  margin-bottom: 3.889vw;
+}
+.m_body .main .mid .btn_scan figcaption {
+  color: #FFF;
+  font-size: 4.444vw;
+  margin-bottom: 3.889vw;
+}
+.m_body .main .mid .list {
+  width: 92%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.m_body .main .mid .list li {
+  width: 30%;
+}
+.m_body .main .mid .list li figure {
+  border-radius: 100%;
+  background-color: #FFF;
+  box-shadow: 5px 5px 10px rgba(0, 188, 212, 0.2);
+  padding: 8.333vw;
+  box-sizing: border-box;
+  margin-bottom: 2.222vw;
+}
+.m_body .main .mid .list li figcaption {
+  text-align: center;
+}
+.m_body .tab_bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #FFF;
+  width: 100%;
+  border-top: 1px solid #00BCD4;
+}
+.m_body .tab_bar ul {
+  width: 92%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 3.333vw 0;
+}
+.m_body .tab_bar ul li {
+  text-align: center;
+}
+.m_body .tab_bar ul li figure {
+  width: 8.333vw;
+  height: 8.333vw;
+  margin: 0 auto 2.222vw;
 }/*# sourceMappingURL=style.css.map */
