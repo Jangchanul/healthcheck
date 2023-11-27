@@ -705,10 +705,6 @@ header {
 .m_body .main .mid .btn_scan {
   display: block;
   width: 58.4vw;
-  background-color: #00BCD4;
-  border-radius: 100%;
-  overflow: hidden;
-  padding: 13.889vw 13.889vw 0 13.889vw;
   box-sizing: border-box;
   margin: 0 auto 11.111vw;
 }
@@ -731,11 +727,6 @@ header {
   width: 30%;
 }
 .m_body .main .mid .list li figure {
-  border-radius: 100%;
-  background-color: #FFF;
-  box-shadow: 5px 5px 10px rgba(0, 188, 212, 0.2);
-  padding: 8.333vw;
-  box-sizing: border-box;
   margin-bottom: 2.222vw;
 }
 .m_body .main .mid .list li figcaption {

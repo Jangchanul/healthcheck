@@ -708,10 +708,6 @@ header{
             .btn_scan{
                 display: block;
                 width: 58.4vw;
-                background-color: #00BCD4;
-                border-radius: 100%;
-                overflow: hidden;
-                padding: 13.889vw 13.889vw 0 13.889vw;
                 box-sizing: border-box;
                 margin: 0 auto 11.111vw;
                 figure{
@@ -732,11 +728,6 @@ header{
                 li{
                     width: 30%;
                     figure{
-                        border-radius: 100%;
-                        background-color: #FFF;
-                        box-shadow: 5px 5px 10px rgba(0, 188, 212, 0.20);
-                        padding: 8.333vw;
-                        box-sizing: border-box;
                         margin-bottom: 2.222vw;
                     }
                     figcaption{
