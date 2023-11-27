@@ -698,8 +698,11 @@ header {
   background-color: #EBF1F5;
 }
 .m_body .main {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
-  padding-bottom: 24vw;
   box-sizing: border-box;
 }
 .m_body .main .mid .btn_scan {
